@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int MaxPairwiseProductFast(vector<int> numbers) {
+int MaxPairwiseProductFast(vector<int64_t> numbers) {
 	int index1 = 0;
 	for (int i = 1; i != numbers.size(); i++) {
 		if (numbers[i] > numbers[index1]) {
@@ -21,7 +21,7 @@ int MaxPairwiseProductFast(vector<int> numbers) {
 			index2 = i;
 		}
 	}
-	int product = numbers[index1] * numbers[index2];
+	int64_t product = numbers[index1] * numbers[index2];
 	return product;
 }
 
@@ -29,7 +29,7 @@ int main() {
 	int n;
 	cout << "Enter list size: ";
 	cin >> n;
-	vector<int> numbers(n);
+	vector<int64_t> numbers(n);
 	cout << "Enter all the element for list:" << endl;
 	for (int i = 0; i < n; ++i) {
 		cin >> numbers[i];
