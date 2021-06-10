@@ -27,7 +27,7 @@
     <ProjectGuid>{9a3b6495-2d96-48fa-bf8d-8e294b7687c5}</ProjectGuid>
     <RootNamespace>AlgorithmToolbox</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Greedy Algorithm</ProjectName>
+    <ProjectName>Week1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
