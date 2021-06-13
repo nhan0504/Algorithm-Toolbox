@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 void Merge(vector<int>& list1, vector<int>& list2, vector<int>& MergedList) {
-    if (list1.size() != list2.size() && list1.size() == 0 || list2.size() == 0) {
+    if (list1.size() == 0 || list2.size() == 0) {
         if (list1.size() < list2.size()) {
             for (int i = list1.size(); i != list2.size(); i++) {
                 MergedList.push_back(list2[i]);
@@ -13,9 +13,6 @@ void Merge(vector<int>& list1, vector<int>& list2, vector<int>& MergedList) {
                 MergedList.push_back(list1[i]);
             }
         }
-        return;
-    }
-    else if (list1.size() != list2.size() && list1.size() == 0) {
         return;
     }
     int index1 = 0;
