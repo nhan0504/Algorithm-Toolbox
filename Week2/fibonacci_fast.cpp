@@ -1,13 +1,16 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-int fibonacci_fast(int n) {
-    vector<int> fibonacci(2, 1);
-    if (n <= 1) {
+int64_t fibonacci_fast(int n) {
+    vector<int64_t> fibonacci(2, 1);
+    if (n <= 2 && n > 0) {
         return 1;
     }
+    else if(n <= 0) {
+        return 0;
+    }
     int i = 0;
-    int a = 0;
+    int64_t a = 0;
     while (i != n - 2) {
         a = fibonacci[i] + fibonacci[i + 1];
         fibonacci.push_back(a);
