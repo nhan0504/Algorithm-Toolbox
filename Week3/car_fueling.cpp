@@ -12,21 +12,20 @@ int compute_min_refills(int dist, int tank, vector<int> & stops) {
     while (stops[CurrentRefill] <= dist) {
         LastRefill = CurrentRefill;
         while (stops[CurrentRefill] <= dist && stops[CurrentRefill + 1] - stops[LastRefill] <= tank) {
-            cout << "last refill dist = " << stops[LastRefill] << endl;
-            cout << "current refill + 1 dist = " << stops[CurrentRefill + 1] << endl;
             CurrentRefill++;  
             if (CurrentRefill == stops.size() - 1) {
                 break;
             }
+        }
+        if (CurrentRefill == LastRefill) {
+            return -1;
         }
         if (CurrentRefill == stops.size() - 1) {
             break;
         }
         if (stops[CurrentRefill] <= dist) {
             numRefills++;
-            cout << "num refills = " << numRefills << endl;
         }
-        cout << "current refill = " << CurrentRefill << endl;
     }
     return numRefills;
 }
