@@ -9,24 +9,22 @@ bool cmp(pair<double,int>& i, pair<double,int>& j) {
 }
 double get_optimal_value(int capacity, vector<int> weights, vector<int> values) {
 	double value = 0.0;
-	vector<pair<double, int>> Sorted;
 	map<double,int> compare;
 	for (int i = 0; i != weights.size(); i++) {
 		double a = values[i] / (double)weights[i];
 		compare[a] = i;
 	}
-	for (map<double, int>::iterator it = compare.begin(); it != compare.end(); it++) {
-		Sorted.push_back(*it);
-	}
+	vector<pair<double, int>> Sorted(compare.begin(),compare.end());
 	sort(Sorted.begin(), Sorted.end(), cmp);
 	for (vector<pair<double,int>>::iterator i = Sorted.begin(); i != Sorted.end(); i++) {
 		int index = i->second;
 		if (weights[index] <= capacity) {
 			value += values[index];
-			capacity = capacity -  weights[index];
+			capacity -= weights[index];
 		}
 		else {
-			value += capacity * Sorted[index].first;
+			value += (double)capacity * i->first;
+			break;
 		}
 	}
 	return value;
