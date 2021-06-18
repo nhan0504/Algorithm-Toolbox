@@ -5,10 +5,10 @@ int fibonacci_last_digit_fast(int n) {
 	if (n <= 1) {
 		return n;
 	}
-	int64_t f0 = 0;
-	int64_t f1 = 1;
-	int64_t f2 = 0;
-	int64_t sum = 1;
+	uint64_t f0 = 0;
+	uint64_t f1 = 1;
+	uint64_t f2 = 0;
+	uint64_t sum = 1;
 	int n2 = (n + 1 - 2) % 3;
 	int n1 = n + 1 - 2 - n2;
 	for (int i = 0; i < n1; i += 3) {
