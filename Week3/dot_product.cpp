@@ -9,7 +9,7 @@ int64_t max_dot_product(vector<int> a, vector<int> b) {
     sort(b.begin(), b.end());
   int64_t result = 0;
   for (size_t i = 0; i < a.size(); i++) {
-    result += a[i] * b[i];
+    result += (int64_t)a[i] * b[i];
   }
   return result;
 }
