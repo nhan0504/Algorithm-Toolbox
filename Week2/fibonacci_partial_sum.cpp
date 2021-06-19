@@ -19,9 +19,9 @@ vector<int> get_remainder(int64_t n) {
 int get_fibonacci_partial_sum(int64_t from, int64_t to) {
 	vector<int> remainder = get_remainder(10);
 	int size = remainder.size();
-	int64_t start = from % size;
-	int64_t end = to % size;
-	int64_t sum = 0;
+	int start = from % size;
+	int end = to % size;
+	int sum = 0;
 	if (start <= end) {
 		for (int i = start; i <= end; i++) {
 			sum += remainder[i];
