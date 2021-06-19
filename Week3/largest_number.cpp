@@ -6,7 +6,7 @@
 using namespace std;
 
 bool compare(string& a, string& b) {
-    return (b + a < a + b);
+    return (a + b > b + a);
 }
 
 string largest_number(vector<string> a) {
