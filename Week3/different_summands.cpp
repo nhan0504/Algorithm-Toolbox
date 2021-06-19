@@ -5,13 +5,16 @@ using namespace std;
 
 vector<int> optimal_summands(int n) {
   vector<int> summands;
-  if (n == 1) {
-	  summands.push_back(1);
+  for (int i = 1; i <= n; i++) {
+	  if (n - i > i) {
+		  summands.push_back(i);
+		  n -= i;
+	  }
+	  else {
+		  summands.push_back(n);
+		  break;
+	  }
   }
-  if (n == 2) {
-	  summands.push_back(2);
-  }
-
   return summands;
 }
 
