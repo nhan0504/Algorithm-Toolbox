@@ -16,29 +16,14 @@ void Merge(vector<int>& list1, vector<int>& list2, vector<int>& MergedList) {
         }
         return;
     }
-    int index1 = 0;
-    for (int i = 1; i != list1.size(); i++) {
-        if (list1[i] < list1[index1]) {
-            index1 = i;
-        }
-    }
-    int index2 = 0;
-    for (int i = 1; i != list2.size(); i++) {
-        if (list2[i] < list2[index2]) {
-            index2 = i;
-        }
-    }
-    if (list1[index1] < list2[index2]) {
-        MergedList.push_back(list1[index1]);
-        list1.erase(list1.begin() + index1);
-        MergedList.push_back(list2[index2]);
-        list2.erase(list2.begin() + index2);
+
+    if (list1[0] <= list2[0]) {
+        MergedList.push_back(list1[0]);
+        list1.erase(list1.begin());
     }
     else {
-        MergedList.push_back(list2[index2]);
-        list2.erase(list2.begin() + index2);
-        MergedList.push_back(list1[index1]);
-        list1.erase(list1.begin() + index1);
+        MergedList.push_back(list2[0]);
+        list2.erase(list2.begin());
     }
     Merge(list1, list2, MergedList);
 }
