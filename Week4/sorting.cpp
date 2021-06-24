@@ -15,17 +15,17 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
     cout << "m1 = " << m1 << endl;
     int m2 = m1;
     int i = 0;
-    while (i < a.size()) {
+    while (i < (e - s + 1)) {
         cout << "a[" << i << "] = " << a[i] << endl;
         if (a[i] < x) {
             if (i > m2) {
                 if (i != m2 + 1) {
                     swap(a[i], a[m2 + 1]);
-                }              
+                }
                 swap(a[m2 + 1], a[m1]);
                 m1++;
                 m2++;
-            }    
+            }
             for (int j = 0; j < a.size(); j++) {
                 cout << a[j] << ' ';
             }
@@ -35,7 +35,7 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
             }
             else {
                 i++;
-            }          
+            }
         }
         else if (a[i] == x) {
             if (i > m2) {
@@ -63,11 +63,11 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
             if (i < m1) {
                 if (i != m1 - 1) {
                     swap(a[i], a[m1 - 1]);
-                }               
+                }
                 swap(a[m1 - 1], a[m2]);
                 m1--;
                 m2--;
-            }  
+            }
             for (int j = 0; j < a.size(); j++) {
                 cout << a[j] << ' ';
             }
@@ -96,3 +96,4 @@ int main() {
         cout << a[i] << ' ';
     }
 }
+
