@@ -21,6 +21,7 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
         }
         return;
     }
+
     int m1 = s + rand() % vector_size;
     int x = a[m1];
     int m2 = m1;
