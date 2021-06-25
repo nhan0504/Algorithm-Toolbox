@@ -31,6 +31,7 @@ int Merge(vector<int>& list1, vector<int>& list2, vector<int>& MergedList, int& 
         }
         return inversion;
     }
+
     Merge(list1, list2, MergedList, inversion);
 }
 
