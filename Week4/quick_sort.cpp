@@ -3,6 +3,12 @@
 #include <cstdlib>
 
 using namespace std;
+void swap_3_numbers(vector<int>& a, int x, int y, int z) {
+    int temp = a[z];
+    a[z] = a[y];
+    a[y] = a[x];
+    a[x] = temp;
+}
 
 void randomized_quick_sort(vector<int>& a, int s, int e) {
     if (s >= e) {
@@ -33,8 +39,7 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
             cout << endl;
         }
         else if (a[p] > x) {
-            swap(a[p], a[m1 - 1]);
-            swap(a[m1 - 1], a[m2]);
+            swap_3_numbers(a, m2, m1 - 1, p);
             m1--;
             m2--;
             cout << "m1 = " << m1 << endl;
@@ -66,8 +71,7 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
             cout << endl;
         }
         else if (a[q] < x) {
-            swap(a[q], a[m2 + 1]);
-            swap(a[m2 + 1], a[m1]);
+            swap_3_numbers(a, m1, m2 + 1, q);
             m1++;
             m2++;
             cout << "m1 = " << m1 << endl;
