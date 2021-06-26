@@ -20,56 +20,66 @@ void randomized_quick_sort(vector<int>& a, int s, int e) {
     cout << "x = " << x << endl;
     int m2 = m1;
     int p = s;
-    cout << "p = " << p << endl;
-    cout << "m1 = " << m1 << endl;
     while (p < m1) {
+        cout << "a[" << p << "] = " << a[p] << endl;
         if (a[p] == x) {
             swap(a[p], a[m1 - 1]);
-            p++;
-            for (int i = 0; i < e; i++) {
+            m1--;
+            cout << "m1 = " << m1 << endl;
+            cout << "m2 = " << m2 << endl;
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
         }
         else if (a[p] > x) {
-            swap(a[p], a[m2 + 1]);
-            p++;
-            for (int i = 0; i < e; i++) {
+            swap(a[p], a[m1 - 1]);
+            swap(a[m1 - 1], a[m2]);
+            m1--;
+            m2--;
+            cout << "m1 = " << m1 << endl;
+            cout << "m2 = " << m2 << endl;
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
         }
         else if (a[p] < x) {
             p++;
-            for (int i = 0; i < e; i++) {
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
         }
     }
     int q = e;
-    cout << "m2 = " << m2 << endl;
-    cout << "q = " << q << endl;
     while (q > m2) {
+        cout << "a[" << q << "] = " << a[q] << endl;
         if (a[q] == x) {
             swap(a[q], a[m2 + 1]);
-            q--;
-            for (int i = 0; i < e; i++) {
+            m2++;
+            cout << "m1 = " << m1 << endl;
+            cout << "m2 = " << m2 << endl;
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
         }
         else if (a[q] < x) {
-            swap(a[q], a[m1 - 1]);
-            q--;
-            for (int i = 0; i < e; i++) {
+            swap(a[q], a[m2 + 1]);
+            swap(a[m2 + 1], a[m1]);
+            m1++;
+            m2++;
+            cout << "m1 = " << m1 << endl;
+            cout << "m2 = " << m2 << endl;
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
         }
         else if (a[q] > x) {
             q--;
-            for (int i = 0; i < e; i++) {
+            for (int i = 0; i <= e; i++) {
                 cout << a[i] << ' ';
             }
             cout << endl;
